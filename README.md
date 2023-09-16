@@ -1,0 +1,2 @@
+# startup-example
+for class
