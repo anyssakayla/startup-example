@@ -5,11 +5,11 @@
 Don't worry, we’ve all been there; Where we are looking for a quick way to make an extra buck, but don’t want to pick up another job… Whether it be trying to make an extra $100 for a concert or just want some extra spending cash, we've got your back. Introducing CashDash - the ultimate platform for fast cash. You can be either a seller or a buyer. Sellers post their tasks needing to be done, and buyers complete the task and go home with cash. As a seller, you would post your task, set your price, and watch as a community of eager helpers jumps in to assist. It’s a win-win for everyone. Sellers get tasks completed and buyers get quick cash. 
 
 ## Design
-[CS260 WEB.pdf](https://github.com/anyssakayla/startup-example/files/12707704/CS260.WEB.pdf)
+![Home page design.pdf](https://github.com/anyssakayla/startup-example/files/12707704/CS260.WEB.pdf)
 
 Here is a sequence diagram that shows how to people would interact with the backend to vote.
 
-[sequenceDiagram.pdf](https://github.com/anyssakayla/startup-example/files/12707708/sequenceDiagram.pdf)
+![sequenceDiagram.pdf](https://github.com/anyssakayla/startup-example/files/12707708/sequenceDiagram.pdf)
 
 ##Key features
 Secure login over HTTPS
