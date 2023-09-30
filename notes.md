@@ -5,4 +5,4 @@ a lot more comfortable with the software.
 
 I have now added simon-html to my repository
 Make sure to add untracked files and then commit before you push
-To commit: git commit -a -m "*message here"ls 
+To commit: git commit -a -m "*message here"
