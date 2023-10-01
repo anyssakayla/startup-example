@@ -3,56 +3,81 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scores</title>
+    <title>TaskCash</title>
     <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <header>
-      <h1>Simon<sup>&reg;</sup></h1>
+      <h1>TaskCash<sup>&reg;</sup></h1>
 
       <nav>
         <menu>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="play.html">Play</a></li>
-          <li><a href="scores.html">Scores</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.html">Home</a></li> <!-- Might delete home button-->
+          <li><a href="buy.html">Do a task</a></li>
+          <li><a href="">Offer your services</a></li>
+          <li><a href="listed.html">Your Tasks</a></li>
+          <li><a href="profile.html">Profile</a></li> <!--add picture profile or default pic-->
+          <li><a href="">Messages</a></li> <!--message between accounts like instagram DMs-->
         </menu>
       </nav>
 
       <hr />
     </header>
 
+
     <main>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Score</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>도윤 이</td>
-            <td>34</td>
-            <td>May 20, 2021</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Annie James</td>
-            <td>29</td>
-            <td>June 2, 2021</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Gunter Spears</td>
-            <td>7</td>
-            <td>July 3, 2020</td>
-          </tr>
-        </tbody>
-      </table>
+
+      <h2>Sell a task:</h2>
+      <form method="post" action="listed.html"> <!--using "post" for security reasons since "get" can be seen through URL-->
+        <ul>   
+          <li>
+            <h5>Task Title: </h5></li>   
+            <li>
+              <label for="TaskTitle">Task Title: </label>
+              <input type="text" id="TaskTitle" placeholder="Enter Task Title" /> </li>
+          <li> 
+            <label for="image">Insert image: </label>
+            <input type="file" id="image" name="varFile" accept="image/*" multiple /> </li>
+            <li>
+              <label for="description">Task description:</label>
+              <textarea id="textarea" name="varTextarea"></textarea>
+            </li>
+            <li>
+              <label for="sellingPrice">How much are you selling this task for: </label>
+              <input type="number" id="sellingPrice" placeholder="Price" />
+            </li>
+            <li>
+              <fieldset>
+                <legend>Difficulty Level</legend>
+                <label for="checkbox1">Easy</label>
+                <input type="checkbox" id="easyDiff" name="varCheckbox" value="checkbox1" checked />
+                <label for="checkbox2">Medium</label>
+                <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
+                <label for="checkbox3">Hard</label>
+                <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
+                <label for="checkbox4">Expertise Needed</label>
+                <input type="checkbox" id="checkbox4" name="varCheckbox" value="checkbox4" checked />
+                <label fieldset>
+            </li>
+            <h3>Optional details: </h3>
+            <h5>Adding optional details may help your task get seen by more people </h5>
+            <li> 
+              <fieldset>
+              <legend>Task Type</legend>
+              <label for="checkbox1">Manual labor</label>
+              <input type="checkbox" id="checkbox1" name="varCheckbox" value="checkbox1" checked />
+              <label for="checkbox2">Technology</label>
+              <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
+              <label for="checkbox3">Cleaning</label>
+              <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
+              <label for="checkbox4">House sitting</label>
+              <input type="checkbox" id="checkbox4" name="varCheckbox" value="checkbox4" checked />
+              <label for="checkbox5">Pet sitting</label>
+              <input type="checkbox" id="checkbox5" name="varCheckbox" value="checkbox5" checked />
+              <label fieldset></li>
+        </ul>
+
+      </form>
     </main>
 
     <footer>
