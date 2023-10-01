@@ -28,43 +28,33 @@
 
     <main>
 
-      <h2>Sell a task:</h2>
+      <h2>Offer your services:</h2>
+      <h5>If you want to sell your expertise or time *Better description*</h5>
       <form method="post" action="listed.html"> <!--using "post" for security reasons since "get" can be seen through URL-->
         <ul>   
           <li>
-            <h5>Task Title: </h5></li>   
+          
             <li>
-              <label for="TaskTitle">Task Title: </label>
-              <input type="text" id="TaskTitle" placeholder="Enter Task Title" /> </li>
-          <li> 
-            <label for="image">Insert image: </label>
-            <input type="file" id="image" name="varFile" accept="image/*" multiple /> </li>
+              <label for="serviceTitle">Service Title: </label>
+              <input type="text" id="serviceTitle" placeholder="Enter Service Title" /> </li>
+
             <li>
-              <label for="description">Task description:</label>
+              <label for="description">Service description:</label>
               <textarea id="textarea" name="varTextarea"></textarea>
             </li>
             <li>
-              <label for="sellingPrice">How much are you selling this task for: </label>
-              <input type="number" id="sellingPrice" placeholder="Price" />
+              <label for="servicePrice">How much are you selling your services for: </label>
+              <input type="number" id="servicePrice" placeholder="Price" />
             </li>
-            <li>
-              <fieldset>
-                <legend>Difficulty Level</legend>
-                <label for="checkbox1">Easy</label>
-                <input type="checkbox" id="easyDiff" name="varCheckbox" value="checkbox1" checked />
-                <label for="checkbox2">Medium</label>
-                <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
-                <label for="checkbox3">Hard</label>
-                <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
-                <label for="checkbox4">Expertise Needed</label>
-                <input type="checkbox" id="checkbox4" name="varCheckbox" value="checkbox4" checked />
-                <label fieldset>
-            </li>
+
             <h3>Optional details: </h3>
-            <h5>Adding optional details may help your task get seen by more people </h5>
+            <h5>Adding optional details may help your services get seen by more people </h5>
+            <li> 
+                <label for="image">Insert image: </label>
+                <input type="file" id="image" name="varFile" accept="image/*" multiple /> </li>
             <li> 
               <fieldset>
-              <legend>Task Type</legend>
+              <legend>Service Type</legend>
               <label for="checkbox1">Manual labor</label>
               <input type="checkbox" id="checkbox1" name="varCheckbox" value="checkbox1" checked />
               <label for="checkbox2">Technology</label>
