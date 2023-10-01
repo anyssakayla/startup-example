@@ -50,3 +50,18 @@ To complete these tasks, the application will use the following:
 - Login
 - React
 
+## HTML:
+- 8 HTML pages for each component of TaskCash implemented
+### Links between pages
+- The pages are acceseible through each other by clicking the links at the top of the page
+- These links will turn into a menu bar once CSS is implemented
+
+  
+- implements textual content
+- implements 3rd party service calls
+- users will save information to the server for other people to see real-time
+- Image/Logo created for TaskCash
+- User Login placeholder created for user's information to be stored within the database
+- Information from the user's tasks/services they list on the website will go to the server
+- real time communication will go through the user's task/services and messages
+
