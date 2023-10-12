@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskCash</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -13,15 +13,28 @@
             <h4>*one sentence TaskCash summary here*</h4>
             <p>Login or Create an account to get started today</p>
         </div>
-        <div class="right">
-            <form method="get" action="buy.html">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Enter username" />
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter Password">
-                <button type="submit">Login</button>
-            </form>
-        </div>
+                <div class="right">
+          <h2>Login</h2>
+          <form id="loginForm" method="get" action="buy.html"> <!-- change to post for safer user identity-->
+              <label for="loginUsername">Username</label>
+              <input type="text" id="loginUsername" name="loginUsername" placeholder="Enter username" required>
+              <label for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" name="loginPassword" placeholder="Enter Password" required>
+              <button type="submit">Login</button>
+          </form>
+
+          <h2 id="signupTitle" style="display: none;">Sign Up</h2>
+          <form id="signupForm" style="display: none;">
+              <label for="signupUsername">Username</label>
+              <input type="text" id="signupUsername" name="signupUsername" placeholder="Enter username" required>
+              <label for="signupPassword">Password</label>
+              <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter Password" required>
+              <button type="submit">Sign Up</button>
+          </form>
+
+          <button id="showSignupBtn">Sign Up</button>
+      </div>
     </div>
+    <!-- <script src="script.js"></script>-->
 </body>
 </html>
