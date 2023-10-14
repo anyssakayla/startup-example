@@ -2,28 +2,113 @@
 <html lang="en">
   <!--Allows you to list tasks to sell for "buyers/DOers to complete for money"-->
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaskCash</title>
-    <link rel="icon" href="favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+    crossorigin="anonymous">
+    <style>
+        section{
+            padding-top: 60px 0;
+        }
+    </style> <!--adding my own stylesheet-->
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
-      <h1>TaskCash<sup>&reg;</sup></h1>
+      <div class="header-container">
+        <!--NavBar-->
+        <nav class="navbar navbar-expand-lg navbar-dark  p-3 fixed-top" style="background-color: #22a32b;">
+            <!-- padding of 3-->
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand text-white">TaskCash</a> <!-- Should take you to top of page-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto h5">
+                        <li class="nav-item">
+                            <a href="index.html" class="btn btn-link">Home</a>
+                        </li> <!-- Might delete home button-->
+                        <li class="nav-item">
+                            <a href="sell.html" class="btn btn-link">Sell a task</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="buy.html" class="btn btn-link">Do a Task</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="listed.html" class="btn btn-link">Your Tasks and Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="profile.html" class="btn btn-link">Profile</a>
+                        </li> <!--add picture profile or default pic-->
+                        <li class="nav-item">
+                            <a href="" class="btn btn-link">Messages</a>
+                        </li> <!--message between accounts like Instagram DMs-->
+                    </ul>
+                </div>
+                <!--Toggle button for Navbar-->
+            </div>
+        </nav>
+    </div>
+  </header>
 
-      <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li> <!-- Might delete home button-->
-          <li><a href="sell.html">Sell a task</a></li>
-          <li><a href="buy.html">Do a Task</a></li>
-          <li><a href="listed.html">Your Tasks and Services</a></li>
-          <li><a href="profile.html">Profile</a></li> <!--add picture profile or default pic-->
-          <li><a href="">Messages</a></li> <!--message between accounts like instagram DMs-->
-        </menu>
-      </nav>
 
-      <hr />
-    </header>
+  <section id="services-intro" class="vh-100 d-flex align-items-center" style="background-color: #22a32b;">
+    <div class="position-relative w-100">
+        <img src="/startup/images/HomeBackgroundImage.jpg" class="img-fluid" alt="HomeBackgroundImage">
+        <div class="position-absolute top-50 start-50 translate-middle text-center">
+            <div class="container-lg">
+                <div class="row justify-content-center">
+                    <div class="col-15 text-center text-white">
+                      <h2>Offer your services:</h2>
+      <h5>If you want to sell your expertise or time *Better description*</h5>
+      <form method="post" action="listed.html"> <!--using "post" for security reasons since "get" can be seen through URL-->
+        <ul>   
+          <li>
+          
+            <li>
+              <label for="serviceTitle">Service Title: </label>
+              <input type="text" id="serviceTitle" placeholder="Enter Service Title" /> </li>
+
+            <li>
+              <label for="description">Service description:</label>
+              <textarea id="textarea" name="varTextarea"></textarea>
+            </li>
+            <li>
+              <label for="servicePrice">How much are you selling your services for: </label>
+              <input type="number" id="servicePrice" placeholder="Price" />
+            </li>
+
+            <h3>Optional details: </h3>
+            <h5>Adding optional details may help your services get seen by more people </h5>
+            <li> 
+                <label for="image">Insert image: </label>
+                <input type="file" id="image" name="varFile" accept="image/*" multiple /> </li>
+            <li> 
+              <fieldset>
+              <legend>Service Type</legend>
+              <label for="checkbox1">Manual labor</label>
+              <input type="checkbox" id="checkbox1" name="varCheckbox" value="checkbox1" checked />
+              <label for="checkbox2">Technology</label>
+              <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
+              <label for="checkbox3">Cleaning</label>
+              <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
+              <label for="checkbox4">House sitting</label>
+              <input type="checkbox" id="checkbox4" name="varCheckbox" value="checkbox4" checked />
+              <label for="checkbox5">Pet sitting</label>
+              <input type="checkbox" id="checkbox5" name="varCheckbox" value="checkbox5" checked />
+              <label fieldset></li>
+        </ul>
+
+      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
     <main>
