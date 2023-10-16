@@ -8,36 +8,161 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <style>
         section{
             padding-top: 60px 0;
         }
     </style> <!--adding my own stylesheet-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="buy.css">
   </head>
+
+  <header>
+    <div class="header-container">
+      <!--NavBar-->
+      <nav class="navbar navbar-expand-lg navbar-dark  p-3 fixed-top" style="background-color: #22a32b;"> <!-- padding of 3-->
+
+          <div class="container-fluid">
+            <a href="login.html" class="navbar-brand text-white">TaskCash</a> <!-- Shoudl take you to top of page-->
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent" >
+              <!--<div class="auth-buttons">-->
+               <ul class="navbar-nav ms-auto h5">
+                <li class="nav-item"><a href="sell.html" class="nav-link text-white">Sell a task</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link text-white">Offer your services</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link text-white">Profile</a></li> <!--add picture profile or default pic-->
+                <li class="nav-item"><a href="" class="nav-link text-white">Messages</a></li> <!--message between accounts like instagram DMs-->
+              </ul>
+          </div>
+             <!--<img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">--> 
+              <!--Toggle button for Navbar-->
+            </a>
+          </div>
+      </nav>
+  </div>
+  </header>
   <body>
     <!-- Use header, main, and footer elements to give semantic structure -->
-    <header>
-      <h1>TaskCash</h1> <!-- want CashDash to turn into a button that will take you home-->
-      <!-- Navigation elements -->
 
-      <nav>
-        <menu>
-          <li><a href="index.html">Home</a></li> <!-- Might delete home button-->
-          <li><a href="sell.html">Sell</a></li>
-          <li><a href="services.html">Offer your services</a></li>
-          <li><a href="">Filter</a></li> <!-- will be a dropdown menu-->
-          <li><a href="profile.html">Profile</a></li> <!--add picture profile or default pic-->
-          <li><a href="">Messages</a></li> <!--message between accounts like instagram DMs-->
-
-        </menu>
-      </nav>
-
-      <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
-      <hr />
-    </header>
 
     <main>
+      
+      <!--Added padding to top so doesn't get cut off by header-->
+      <div class="padding-top">
+        <!-- Blank padding options -->
+        <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+        <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+        <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+    </div>
+
+    <h1>Tasks Near You: </h1>
+
+
+    <!--Creating card containers to display tasks-->
+    
+    <div class="row pb-5 mb-4">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+    <div class="container">
+      <div class="cardcontainer shadow-sm border-0 rounded">
+          <div class="photo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Stairs_with_weed.jpg">
+              <div class="taskPrice">$60</div>
+          </div>
+          <div class="content">
+              <p class="txt4">Pull weeds out of my lawn</p>
+             <!--- <p class="txt5">A city that never sleeps</p> -->
+              <p class="txt2">Not too big of a lawn, but there are quite a bit of weeds to pull. Please message me for more details..</p>
+          </div>
+          <div class="footer">
+              <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
+              <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+   <div class="container"> <!--Second container-->
+  
+    <div class="cardcontainer shadow-sm border-0 rounded">
+        <div class="photo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Honda_Civic_Hybrid_%282022%2C_Europe%29_IAA_2023_1X7A0545_%282%29.jpg">
+            <div class="taskPrice">$25</div>
+        </div>
+        <div class="content">
+            <p class="txt4">Wash my car</p>
+           <!--- <p class="txt5">A city that never sleeps</p> -->
+            <p class="txt2">It is pretty dirty and I will pay you extra to clean the inside</p>
+        </div>
+        <div class="footer">
+            <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
+            <p class="txt3"><i class="far fa-clock"></i>15 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
+        </div>
+    </div>
+ </div>
+</div>
+
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+          <div class="container"> <!--Second container-->
+          
+            <div class="cardcontainer shadow-sm border-0 rounded" >
+                <div class="photo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Chéneau%2C_bande_d%27égout_et_noue_en_plomb..JPG">
+                    <div class="taskPrice">$200</div>
+                </div>
+                <div class="content">
+                    <p class="txt4">Clean my gutters</p>
+                   <!--- <p class="txt5">A city that never sleeps</p> -->
+                    <p class="txt2">My gutters have been needing a good clean for a while now</p>
+                </div>
+                <div class="footer">
+                    <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
+                    <p class="txt3"><i class="far fa-clock"></i>20 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
+                </div>
+            </div>
+        </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                  <div class="container"> <!--Second container-->
+                 
+                   <div class="cardcontainer shadow-sm border-0 rounded">
+                       <div class="photo">
+                           <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Stairs_with_weed.jpg">
+                           <div class="taskPrice">$60</div>
+                       </div>
+                       <div class="content">
+                           <p class="txt4">Pull weeds out of my lawn</p>
+                          <!--- <p class="txt5">A city that never sleeps</p> -->
+                           <p class="txt2">Not too big of a lawn, but there are quite a bit of weeds to pull. Please message me for more details..</p>
+                       </div>
+                       <div class="footer">
+                           <p><a class="waves-effect waves-light btn" href="#">Read More</a><a id="heart"><span class="like"><i class="fab fa-gratipay"></i>Like</span></a></p>
+                           <p class="txt3"><i class="far fa-clock"></i>10 Minutes Ago <span class="comments"><i class="fas fa-comments"></i>45 Comments</span></p>
+                       </div>
+                   </div>
+                </div>
+               </div>
+      </div>
+    
+    
+    
+    
+     
+
+
+
+
+
+
+
+
+
+
+
 
       <div class="Listings">
         Listings near you:

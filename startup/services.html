@@ -13,148 +13,204 @@
             padding-top: 60px 0;
         }
     </style> <!--adding my own stylesheet-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
   </head>
+
+  <header>
+    <div class="header-container">
+      <!--NavBar-->
+      <nav class="navbar navbar-expand-lg navbar-dark  p-3 fixed-top" style="background-color: #22a32b;"> <!-- padding of 3-->
+
+          <div class="container-fluid">
+            <a href="login.html" class="navbar-brand text-white">TaskCash</a> <!-- Shoudl take you to top of page-->
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarContent" >
+              <!--<div class="auth-buttons">-->
+               <ul class="navbar-nav ms-auto h5">
+                <li class="nav-item"><a href="buy.html" class="nav-link text-white">Do a task</a></li>
+                <li class="nav-item"><a href="sell.html" class="nav-link text-white">Sell a task</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link text-white">Profile</a></li> <!--add picture profile or default pic-->
+                <li class="nav-item"><a href="" class="nav-link text-white">Messages</a></li> <!--message between accounts like instagram DMs-->
+              </ul>
+          </div>
+             <!--<img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">--> 
+              <!--Toggle button for Navbar-->
+            </a>
+          </div>
+      </nav>
+  </div>
+</header>
+<!-- End of the header-->
   <body>
-    <header>
-      <div class="header-container">
-        <!--NavBar-->
-        <nav class="navbar navbar-expand-lg navbar-dark  p-3 fixed-top" style="background-color: #22a32b;">
-            <!-- padding of 3-->
-            <div class="container-fluid">
-                <a href="#" class="navbar-brand text-white">TaskCash</a> <!-- Should take you to top of page-->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav ms-auto h5">
-                        <li class="nav-item">
-                            <a href="index.html" class="btn btn-link">Home</a>
-                        </li> <!-- Might delete home button-->
-                        <li class="nav-item">
-                            <a href="sell.html" class="btn btn-link">Sell a task</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="buy.html" class="btn btn-link">Do a Task</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="listed.html" class="btn btn-link">Your Tasks and Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="profile.html" class="btn btn-link">Profile</a>
-                        </li> <!--add picture profile or default pic-->
-                        <li class="nav-item">
-                            <a href="" class="btn btn-link">Messages</a>
-                        </li> <!--message between accounts like Instagram DMs-->
-                    </ul>
-                </div>
-                <!--Toggle button for Navbar-->
-            </div>
-        </nav>
+
+
+<!-- User can create their service here-->
+
+<div class="content">
+  <!-- content inner -->
+  <div class="content__inner">
+    <div class="container">
+
+      <div class="padding-top">
+        <!-- Blank padding options -->
+        <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+        <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+        <div class="blank-option" style="padding: 10px;">&nbsp;</div>
     </div>
-  </header>
+      <!-- content title -->
+      <h2 class="content__title content__title--m-sm">List your services and get hired:</h2>
+      <!-- content title -->
+      <h5 class="content__title">Click on steps or 'Prev' and 'Next' buttons</h5>
 
+      <div class="container overflow-hidden">
+        <!-- multisteps-form -->
+        <div class="multisteps-form">
 
-  <section id="services-intro" class="vh-100 d-flex align-items-center" style="background-color: #22a32b;">
-    <div class="position-relative w-100">
-        <img src="/startup/images/HomeBackgroundImage.jpg" class="img-fluid" alt="HomeBackgroundImage">
-        <div class="position-absolute top-50 start-50 translate-middle text-center">
-            <div class="container-lg">
-                <div class="row justify-content-center">
-                    <div class="col-15 text-center text-white">
-                      <h2>Offer your services:</h2>
-      <h5>If you want to sell your expertise or time *Better description*</h5>
-      <form method="post" action="listed.html"> <!--using "post" for security reasons since "get" can be seen through URL-->
-        <ul>   
-          <li>
-          
-            <li>
-              <label for="serviceTitle">Service Title: </label>
-              <input type="text" id="serviceTitle" placeholder="Enter Service Title" /> </li>
+          <!-- progress bar -->
+          <div class="row">
+            <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+              <div class="multisteps-form__progress">
+               <!--- <button class="multisteps-form__progress-btn js-active" type="button" title="User Info">User Info</button>
+                <button class="multisteps-form__progress-btn" type="button" title="Address">Address</button>
+                <button class="multisteps-form__progress-btn" type="button" title="Order Info">Order Info</button>
+                <button class="multisteps-form__progress-btn" type="button" title="Comments">Comments</button> -->
+              </div>
+            </div>
+          </div> 
 
-            <li>
-              <label for="description">Service description:</label>
-              <textarea id="textarea" name="varTextarea"></textarea>
-            </li>
-            <li>
-              <label for="servicePrice">How much are you selling your services for: </label>
-              <input type="number" id="servicePrice" placeholder="Price" />
-            </li>
+          <!-- form panels -->
+   <div class="row">
+   <div class="col-12 col-lg-8 m-auto">
+    <form class="multisteps-form__form" method="post" action="profile.html">
 
-            <h3>Optional details: </h3>
-            <h5>Adding optional details may help your services get seen by more people </h5>
-            <li> 
-                <label for="image">Insert image: </label>
-                <input type="file" id="image" name="varFile" accept="image/*" multiple /> </li>
-            <li> 
-              <fieldset>
-              <legend>Service Type</legend>
-              <label for="checkbox1">Manual labor</label>
-              <input type="checkbox" id="checkbox1" name="varCheckbox" value="checkbox1" checked />
-              <label for="checkbox2">Technology</label>
-              <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
-              <label for="checkbox3">Cleaning</label>
-              <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
-              <label for="checkbox4">House sitting</label>
-              <input type="checkbox" id="checkbox4" name="varCheckbox" value="checkbox4" checked />
-              <label for="checkbox5">Pet sitting</label>
-              <input type="checkbox" id="checkbox5" name="varCheckbox" value="checkbox5" checked />
-              <label fieldset></li>
-        </ul>
-
-      </form>
+                <!-- single form panel -->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title">What service are you offering?</h3>
+                  <div class="multisteps-form__content">
+                    <div class="form-row mt-4">
+                      <div class="col-12 col-sm-6">
+                        <h5>Service Title</h5>
+                        <input class="multisteps-form__input form-control" type="text" placeholder="Title">
+                      </div>
+                      <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                        <h5>Service Description</h5>
+                        <input class="multisteps-form__input form-control" type="text" placeholder="Description">
+                      </div>
                     </div>
+                    
+                    <div class="form-row mt-4">
+                      <h6>Would you like to include an image of your services?</h6>
+                      <div class="col-12 col-md-6 mt-4">
+                        <div class="card shadow-sm">
+                          <div class="card-body">
+                              <h5 class="card-title">Service Image</h5>
+      
+                              <!-- Use a button for inserting image -->
+                              <button type="button" class="btn btn-primary" id="insertImageBtn">Insert Image</button>
+                          </div>
+                      </div>
+                      </div>
+
+                    </div>
+
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
+
+                <!-- single form panel -->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title">Does your service have a location?</h3>
+                  <div class="multisteps-form__content">
+                    <div class="form-row mt-4">
+                      <div class="col">
+                        <input class="multisteps-form__input form-control" type="text" placeholder="Address 1">
+                      </div>
+                    </div>
+                    <div class="form-row mt-4">
+                      <div class="col">
+                        <input class="multisteps-form__input form-control" type="text" placeholder="Address 2">
+                      </div>
+                    </div>
+                    <div class="form-row mt-4">
+                      <div class="col-12 col-sm-6">
+                        <input class="multisteps-form__input form-control" type="text" placeholder="City">
+                      </div>
+                      <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                        <select class="multisteps-form__select form-control">
+                          <option selected>State...</option>
+                          <option value="state California">California</option>
+                          <option value="state Utah">Utah</option>
+                          <!-- Add options for states here -->
+                        </select>
+                      </div>
+                      <div class="col-6 col-sm-3 mt-4 mt-sm-0">
+                        <input class="multisteps-form__input form-control" type="text" placeholder="Zip">
+                      </div>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Service is online
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Service has no specified location
+                      </label>
+                    </div>
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                      <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Last form panel -->
+                <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
+                  <h3 class="multisteps-form__title">Service Info</h3>
+                 
+                  <div class="multisteps-form__content">
+                    <div class="row">
+
+                      <div class="form-row mt-4">
+                      <div class="col">
+                        <h5>Is there anyting else someone would need to know?</h5>
+                        <input class="multisteps-form__input form-control" type="text" placeholder="additional info">
+                      </div>
+                    </div>
+
+                    <div class="form-row mt-4">
+                      <h5>How much are you selling your services for?</h5>
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <span class="input-group-text">0.00</span>
+                        <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                      </div>
+                    </div>
+                    <div class="button-row d-flex mt-4">
+                      <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
+                      <button class="btn btn-success ml-auto" type="button" title="Send">Submit Service</button>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+    </form>
+                </div>
+   </div>
+   </div>
+      </div>
     </div>
-</section>
+        
+  </div>
+</div>
 
 
-    <main>
-
-      <h2>Offer your services:</h2>
-      <h5>If you want to sell your expertise or time *Better description*</h5>
-      <form method="post" action="listed.html"> <!--using "post" for security reasons since "get" can be seen through URL-->
-        <ul>   
-          <li>
-          
-            <li>
-              <label for="serviceTitle">Service Title: </label>
-              <input type="text" id="serviceTitle" placeholder="Enter Service Title" /> </li>
-
-            <li>
-              <label for="description">Service description:</label>
-              <textarea id="textarea" name="varTextarea"></textarea>
-            </li>
-            <li>
-              <label for="servicePrice">How much are you selling your services for: </label>
-              <input type="number" id="servicePrice" placeholder="Price" />
-            </li>
-
-            <h3>Optional details: </h3>
-            <h5>Adding optional details may help your services get seen by more people </h5>
-            <li> 
-                <label for="image">Insert image: </label>
-                <input type="file" id="image" name="varFile" accept="image/*" multiple /> </li>
-            <li> 
-              <fieldset>
-              <legend>Service Type</legend>
-              <label for="checkbox1">Manual labor</label>
-              <input type="checkbox" id="checkbox1" name="varCheckbox" value="checkbox1" checked />
-              <label for="checkbox2">Technology</label>
-              <input type="checkbox" id="checkbox2" name="varCheckbox" value="checkbox2" />
-              <label for="checkbox3">Cleaning</label>
-              <input type="checkbox" id="checkbox3" name="varCheckbox" value="checkbox3" />
-              <label for="checkbox4">House sitting</label>
-              <input type="checkbox" id="checkbox4" name="varCheckbox" value="checkbox4" checked />
-              <label for="checkbox5">Pet sitting</label>
-              <input type="checkbox" id="checkbox5" name="varCheckbox" value="checkbox5" checked />
-              <label fieldset></li>
-        </ul>
-
-      </form>
-    </main>
 
     <footer>
       <hr />
@@ -162,5 +218,6 @@
       <br />
       <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
     </footer>
+    <script src="services.js"></script>
   </body>
 </html>
