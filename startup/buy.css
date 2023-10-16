@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
+
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #F2F2F2;
+}
+h1{
+    text-align: left;
+    color: #333333;
+}
+.card-container-wrapper {
+    display: flex;
+    justify-content: space-between; /* Adjust as needed for the desired space between card containers */
+    flex-wrap: wrap; /* Allows the cards to wrap to the next line if there are too many to fit */
+    padding: 20px; /* Add padding between card containers */
+}
+.card-container {
+    max-width: 350px;
+    min-width: 200px;
+    max-height: 500px;
+    /* width: 350px;
+    height: 500px; */
+    background-color: white;
+    border-radius: 12px;
+    /* margin-bottom: 20px; Add margin between card containers */
+    /* Rest of your card-container styles */
+}
+.cardcontainer{
+    max-width: 350px;
+    min-width: 200px;
+    max-height: 500px;
+    /* width: 350px;
+    height: 500px; */
+    background-color: white;
+    /* margin: 0 auto 20px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    transition: 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.cardcontainer:hover > photo{ /* The size of the photo with hover was messing with spacing*/
+    height: 200px;
+    animation: none;
+    
+}
+#card-container .col-md-3 {
+    margin-bottom: 20px; /* Add margin between cards */
+}
+
+.photo{
+    height: 300px;
+    width: 100%;
+    overflow: hidden; /* Hide the overflow*/
+    transition: height 0.5s ease;
+}
+.photo img{
+    height: 100%;
+    width: 100%;
+}
+.txt1{
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+}
+.content{
+    width: 80%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: -33px;
+}
+.taskPrice{
+    width: 60px;
+    height: 30px;
+    background-color: #05de51;
+    color: white;
+    position: relative;
+    align-items: center;
+    top: -30px;
+    padding-left: 10px;
+    font-size: 20px;
+    border-radius: 8px;
+    
+    
+}
+.txt4{
+    font-size:27px;
+    position: relative;
+    top: 33px;
+}
+.txt5{
+    position: relative;
+    top: 18px;
+    color: #E74C3C;
+    font-size: 23px;
+}
+.txt2{
+    position: relative;
+    top: 10px;
+}
+.cardcontainer:hover > .photo{
+    height: 200px;
+    animation: move1 0.5s ease both;
+}
+@keyframes move1{
+    0%{height: 300px}
+    100%{height: 200px}
+}
+.cardcontainer:hover > .content{
+    height: 200px;
+}
+.footer{
+    width: 80%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    position: relative;
+    top: -15px;
+}
+.btn{
+    position: relative;
+    top: 20px;
+}
+#heart{
+    cursor: pointer;
+}
+.like{
+    float: right;
+    font-size: 22px;
+    position: relative;
+    top: 20px;
+    color: #333333;
+}
+.fa-gratipay{
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.fa-gratipay:hover{
+    color: #E74C3C;
+}
+.txt3{
+    color: gray;
+    position: relative;
+    top: 18px;
+    font-size: 14px;
+}
+.comments{
+    float: right;
+    cursor: pointer;
+}
+.fa-clock, .fa-comments{
+    margin-right: 7px;
+}
