@@ -15,6 +15,50 @@ body {
 #intro{
     height: 80vh;
 }
+.image-section {
+    background-color: #ffffff; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh; /
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    width: 100px; /* Set image width */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.image-container h4 {
+    margin-top: 10px; /* Adjust the spacing between image and text */
+}
+
+
+
+.TaskSeller-section {
+    background-color: #ffffff; /* Set your desired background color */
+    display: flex;
+    align-items: center;
+    height: 30vh; /* Set the height of the section as per your requirement */
+}
+
+.text-container {
+    flex: 1; /* Take up remaining horizontal space */
+    padding: 20px;
+}
+
+.TaskImage-container img {
+    width: 100%; /* Make the image fill the container */
+    height: auto;
+}
+
+
+
 /* header {
     background-color: rgb(17, 164, 17);
     color: white;

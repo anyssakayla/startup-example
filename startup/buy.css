@@ -10,37 +10,42 @@ body{
 h1{
     text-align: left;
     color: #333333;
+    padding-left: 20px;
 }
 .card-container-wrapper {
     display: flex;
     justify-content: space-between; /* Adjust as needed for the desired space between card containers */
     flex-wrap: wrap; /* Allows the cards to wrap to the next line if there are too many to fit */
-    padding: 20px; /* Add padding between card containers */
+    padding: 15px; /* Add padding between card containers */
 }
 .card-container {
     max-width: 350px;
     min-width: 200px;
     max-height: 500px;
-    /* width: 350px;
-    height: 500px; */
+    width: 300px;
+    height: 500px;
     background-color: white;
     border-radius: 12px;
-    /* margin-bottom: 20px; Add margin between card containers */
+    margin-bottom: 20px; 
     /* Rest of your card-container styles */
 }
 .cardcontainer{
     max-width: 350px;
     min-width: 200px;
     max-height: 500px;
-    /* width: 350px;
-    height: 500px; */
+    width: 350px;
+    height: 500px;
     background-color: white;
-    /* margin: 0 auto 20px; */
-    /* margin-left: auto;
+    margin: 0 auto 20px;
+    padding: 10px;
+     /* margin-left: auto;
     margin-right: auto; */
     transition: 0.3s;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem!important;
+    margin-left: 1.5rem!important;
+    margin-right: 1.5rem!important;
 }
 .cardcontainer:hover > photo{ /* The size of the photo with hover was messing with spacing*/
     height: 200px;
@@ -75,7 +80,7 @@ h1{
     top: -33px;
 }
 .taskPrice{
-    width: 60px;
+    width: 65px;
     height: 30px;
     background-color: #05de51;
     color: white;
@@ -88,7 +93,7 @@ h1{
     
     
 }
-.txt4{
+.TaskTitle{
     font-size:27px;
     position: relative;
     top: 33px;
@@ -99,21 +104,26 @@ h1{
     color: #E74C3C;
     font-size: 23px;
 }
-.txt2{
+.TaskDescription{
     position: relative;
     top: 10px;
 }
+
 .cardcontainer:hover > .photo{
     height: 200px;
     animation: move1 0.5s ease both;
-}
-@keyframes move1{
-    0%{height: 300px}
-    100%{height: 200px}
+    overflow: hidden; /*Doesn't do anything*/
 }
 .cardcontainer:hover > .content{
     height: 200px;
+    overflow: hidden; /*Doesn't do anything */
 }
+
+@keyframes move1{
+    0%{height: 300px} /*Set to 200 to just make image smaller*/
+    100%{height: 200px}
+}
+
 .footer{
     width: 80%;
     height: 100px;
