@@ -120,11 +120,13 @@ const DOMstrings = {
   };
   
   // selector onchange - changing animation (optional)
-  const animationSelect = document.querySelector('.pick-animation__select');
-  animationSelect.addEventListener('change', () => {
-    const newAnimationType = animationSelect.value;
-    setAnimationType(newAnimationType);
-  });
+  // document.addEventListener('DOMContentLoaded', function(){
+  // const animationSelect = document.querySelector('.pick-animation__select');
+  // animationSelect.addEventListener('change', () => {
+  //   const newAnimationType = animationSelect.value;
+  //   setAnimationType(newAnimationType);
+  // });
+  // });
 
   //For getting the Task Image
   $(document).ready(function() {
@@ -144,3 +146,35 @@ const DOMstrings = {
         reader.readAsDataURL(file);
     });
 });
+
+//document.addEventListener('DOMContentLoaded', function(){ //unnecessary since .js is at the end of the body in html
+document.querySelector('#taskForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  //close the form and alert the user of
+  document.querySelector('#taskForm').style.display = 'none';
+  window.alert('The task has been listed!');
+  // Get form values
+  const taskTitle = document.querySelector('#taskTitle').value;
+  const taskDescription = document.querySelector('#taskDescription').value;
+  const taskPrice = document.querySelector('#taskPrice').value;
+  const taskImage = document.querySelector('#taskImage').value;
+
+  // Create a task object with form data
+  const task = {
+    title: taskTitle,
+    description: taskDescription,
+    price: taskPrice,
+    image: taskImage
+  };
+
+  // Store the task data (you can use localStorage, sessionStorage, or send it to a server)
+  // For example, using localStorage:
+  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  tasks.push(task);
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+  
+  // Redirect to buy.html or any other page you want
+  window.location.href = 'buy.html';
+});
+//});

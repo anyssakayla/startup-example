@@ -92,62 +92,72 @@
               <!-- form panels -->
        <div class="row">
        <div class="col-12 col-lg-8 m-auto">
-        <form class="multisteps-form__form" method="post" action="profile.html">
+        <form id="taskForm" class="multisteps-form__form" method="post" action="profile.html">
     
                     <!-- single form panel -->
                     <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
-                      <h3 class="multisteps-form__title">Your User Info</h3>
+                      <h3 class="multisteps-form__title">Task Information: </h3>
                       <div class="multisteps-form__content">
-                        <div class="form-row mt-4">
-                          <div class="col-12 col-sm-6">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="First Name">
-                          </div>
-                          <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="Last Name">
-                          </div>
+
+                        <!--Start information input here-->
+
+                        <div class="col-12 col-md-6 mt-4">
+                          <div class="card shadow-sm">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Task Image</h5>
+      
+                                <!-- Use a button for inserting image -->
+                                <button type="button" class="btn btn-primary" id="insertImageBtn taskImage">Insert Image</button>
+                            </div>
+                        </div>
                         </div>
                         <div class="form-row mt-4">
-                          <div class="col-12 col-sm-6">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="Login">
-                          </div>
-                          <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                            <input class="multisteps-form__input form-control" type="email" placeholder="Email">
-                          </div>
+                        <div class="col">
+                          <h5>Task Title</h5>
+                          <input id="taskTitle" class="multisteps-form__input form-control" type="text" placeholder="title">
                         </div>
-                        <div class="form-row mt-4">
-                          <div class="col-12 col-sm-6">
-                            <input class="multisteps-form__input form-control" type="password" placeholder="Password">
-                          </div>
-                          <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                            <input class="multisteps-form__input form-control" type="password" placeholder="Repeat Password">
-                          </div>
+                      </div>
+                      <div class="form-row mt-4">
+                        <div class="col">
+                          <h5>Task description</h5>
+                          <input id="taskDescription" class="multisteps-form__input form-control description" type="text" placeholder="Please describe important ideas about the task">
                         </div>
+                      </div>
+                      <div class="form-row mt-4">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text">$</span>
+                          <span class="input-group-text">0.00</span>
+                          <input id="taskPrice" type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" placeholder="Task Price">
+                        </div>
+                      </div>
+                        <!--Next button-->
                         <div class="button-row d-flex mt-4">
                           <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
                         </div>
                       </div>
                     </div>
     
-                    <!-- single form panel -->
+                    <!--  - - - - - - - - - - - - - - Task Address panel  - - - - - -= -= - - - - - - - - - -->
                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                      <h3 class="multisteps-form__title">Your Task's Address</h3>
+                      <h3 class="multisteps-form__title">Your Task's Address: </h3>
                       <div class="multisteps-form__content">
                         <div class="form-row mt-4">
                           <div class="col">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="Address 1">
+                            <input id="taskAddress1" class="multisteps-form__input form-control" type="text" placeholder="Address 1">
                           </div>
                         </div>
                         <div class="form-row mt-4">
                           <div class="col">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="Address 2">
+                            <input id="taskAddress2" class="multisteps-form__input form-control" type="text" placeholder="Address 2">
                           </div>
                         </div>
                         <div class="form-row mt-4">
                           <div class="col-12 col-sm-6">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="City">
+                            <input id="taskCity" class="multisteps-form__input form-control" type="text" placeholder="City">
                           </div>
                           <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                            <select class="multisteps-form__select form-control">
+                            <select id="taskState" class="multisteps-form__select form-control">
                               <option selected>State...</option>
                               <option value="state California">California</option>
                               <option value="state Utah">Utah</option>
@@ -155,11 +165,11 @@
                             </select>
                           </div>
                           <div class="col-6 col-sm-3 mt-4 mt-sm-0">
-                            <input class="multisteps-form__input form-control" type="text" placeholder="Zip">
+                            <input id="taskZip" class="multisteps-form__input form-control" type="text" placeholder="Zip">
                           </div>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                          <input class="form-check-input" type="checkbox" value="taskOnline" id="flexCheckDefault taskOnline">
                           <label class="form-check-label" for="flexCheckDefault">
                             Task is online
                           </label>
@@ -171,44 +181,99 @@
                       </div>
                     </div>
     
-                    <!-- single form panel -->
+                    <!-- - - - - - - -- - - - - - - -  -Task info form panel  - - - -- -- - - - - -- - - - -- - -->
                     <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn">
-                      <h3 class="multisteps-form__title">Task Info</h3>
+                      <h3 class="multisteps-form__title">Additional Info: </h3>
                      
                       <div class="multisteps-form__content">
+
+                        <!-- Additional Information for Task starts here -->
                         <div class="row">
-                          <div class="col-12 col-md-6 mt-4">
-                            <div class="card shadow-sm">
-                              <div class="card-body">
-                                  <h5 class="card-title">Task Image</h5>
-          
-                                  <!-- Use a button for inserting image -->
-                                  <button type="button" class="btn btn-primary" id="insertImageBtn">Insert Image</button>
-                              </div>
+                          <div class="form-row mt-4">
+                            <div class="col-12 col-sm-6">
+                              <h5>Is there a date you need this task completed?</h5>
+                              <input class="multisteps-form__input form-control" id="taskDate" type="date">
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="noTaskDate" id="flexCheckDefault noTaskDate">
+                              <label class="multisteps-form__input form-check-label" for="flexCheckDefault">
+                                No specified date
+                              </label>
+                            </div>
+                            <div class="form-row mt-4">
+                            <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+                              <h5>Is there a time for the task?</h5>
+                              <input class="multisteps-form__input form-control" id="taskTime" type="time">
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="noTaskTime" id="flexCheckDefault taskOnline"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                No specified time
+                              </label>
+                            </div>
+                            </div>
+                          </div>
+                          <div class="form-row skillCheckBox">
+                            <div class="">
+                              <div class="blank-option" style="padding: 5px;">&nbsp;</div>
+                              <h5>What kind of skills are needed?</h5>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="noSkills" id="flexCheckDefault noSkills"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                No skills  
+                              </label>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskAnimal" id="flexCheckDefault taskAnimal"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Animal  
+                              </label>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskTech" id="flexCheckDefault taskTech"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Technical/Computer  
+                              </label>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskArt" id="flexCheckDefault taskArt"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Creative/Art  
+                              </label> 
+                              
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskChildren" id="flexCheckDefault taskChildren"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Children  
+                              </label>
+                              <div class="form-row">
+
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskPhysical" id="flexCheckDefault taskPhysical"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Physical Fitness
+                              </label>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskOrganize" id="flexCheckDefault taskOrganize"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Organizational
+                              </label>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskLanguage" id="flexCheckDefault taskLanguage"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Manual Labor
+                              </label>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskSocial" id="flexCheckDefault taskSocial"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Social Media
+                              </label>
+                            </div>
                           </div>
                           </div>
                           <div class="form-row mt-4">
-                          <div class="col">
-                            <h5>Task Title</h5>
-                            <input class="multisteps-form__input form-control" type="text" placeholder="title">
+                            <div class="">
+                              <h4>Does the Task Do-er need to provide their own supplies?</h4>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskSuppliesNeeded" id="flexCheckDefault taskSuppliesNeeded"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Yes
+                              </label>
+                              <br>
+                              <input class="multisteps-form__input form-check-input" type="checkbox" value="taskSuppliesProvided" id="flexCheckDefault taskSuppliesProvided"> <!-- taskOnline and noTaskTime used here-->
+                              <label class="form-check-label" for="flexCheckDefault">
+                                No, I will provide all supplies
+                              </label>
+                            </div>
                           </div>
-                        </div>
-                        <div class="form-row mt-4">
-                          <div class="col">
-                            <h5>Task description</h5>
-                            <input class="multisteps-form__input form-control " type="text" placeholder="Please describe important ideas about the task">
-                          </div>
-                        </div>
-                        <div class="form-row mt-4">
-                          <div class="input-group mb-3">
-                            <span class="input-group-text">$</span>
-                            <span class="input-group-text">0.00</span>
-                            <input type="text" class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
-                          </div>
-                        </div>
+
+                        <!--For previous and submit button-->
                         <div class="button-row d-flex mt-4">
                           <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                          <button class="btn btn-success ml-auto" type="button" title="Send">Submit Task</button>
+                          <button class="btn btn-success ml-auto js-btn-submit" type="button submit" title="Send">Submit Task</button>
                         </div>
                         </div>
                       </div>
@@ -226,12 +291,15 @@
 
 
 
- 
+
+    <div class="padding-top">
+      <!-- Blank padding options -->
+      <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+      <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+      <div class="blank-option" style="padding: 10px;">&nbsp;</div>
+  </div>
     <footer>
-      <hr />
-      <span class="text-reset">Author Name(s)</span>
-      <br />
-      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
+
     </footer>
     <script src="sell.js"></script>
   </body>
