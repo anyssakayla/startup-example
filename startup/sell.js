@@ -178,7 +178,7 @@ document.querySelector('#taskForm').addEventListener('submit', function(event) {
   // For example, using localStorage:
   const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
   tasks.push(task);
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  localStorage.setItem('taskData', JSON.stringify(tasks));
   
   // Redirect to buy.html or any other page you want
   window.location.href = 'buy.html';
