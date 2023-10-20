@@ -152,13 +152,19 @@ document.querySelector('#taskForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
   
   //close the form and alert the user of
-  document.querySelector('#taskForm').style.display = 'none';
+  //document.querySelector('#taskForm').style.display = 'none';
+  console.log('The task has been listed!');
   window.alert('The task has been listed!');
   // Get form values
   const taskTitle = document.querySelector('#taskTitle').value;
   const taskDescription = document.querySelector('#taskDescription').value;
   const taskPrice = document.querySelector('#taskPrice').value;
-  const taskImage = document.querySelector('#taskImage').value;
+  const taskImageElement = document.querySelector('#taskImage'); 
+  console.log(taskTitle);
+  let taskImage = '';
+  if(taskImageElement && taskImageElement.value){ //have to check if user inputted an image
+    taskImage = taskImageElement.value;
+  }
 
   // Create a task object with form data
   const task = {
