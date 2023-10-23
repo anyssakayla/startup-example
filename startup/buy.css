@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('fonts/BebasNeue.otf') format('opentype'); /* Update the filename if your font file has a different name */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Aku&Kamu';
+    src: url('fonts/Aku&Kamu.otf') format('opentype'); /* Update the filename if your font file has a different name */
+    font-weight: normal;
+    font-style: normal;
+}
 
 body{
     margin: 0;
@@ -10,7 +22,10 @@ body{
 h1{
     text-align: left;
     color: #333333;
-    padding-left: 20px;
+    padding-left: 40px;
+    
+    
+
 }
 .card-container-wrapper {
     display: flex;
@@ -166,4 +181,26 @@ h1{
 }
 .fa-clock, .fa-comments{
     margin-right: 7px;
+}
+
+.location-bar {
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.location-bar i {
+    margin-right: 10px;
+    color: #00d420;
+}
+
+#location-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    width: 80px;
 }
