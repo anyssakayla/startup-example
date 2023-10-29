@@ -22,7 +22,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark  p-3 fixed-top" style="background-color: #22a32b;"> <!-- padding of 3-->
 
           <div class="container-fluid">
-            <a href="login.html" class="navbar-brand text-white">TaskCash</a> <!-- Shoudl take you to top of page-->
+            <a href="index.html" class="navbar-brand text-white">TaskCash</a> <!-- Shoudl take you to top of page-->
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
               <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
                <ul class="navbar-nav ms-auto h5">
                 <li class="nav-item"><a href="buy.html" class="nav-link text-white">Do a task</a></li>
                 <li class="nav-item"><a href="sell.html" class="nav-link text-white">Sell a task</a></li>
-                <li class="nav-item"><a href="profile.html" class="nav-link text-white">Profile</a></li> <!--add picture profile or default pic-->
+                <!--<li class="nav-item"><a href="profile.html" class="nav-link text-white">Profile</a></li> --><!--add picture profile or default pic-->
                 <li class="nav-item"><a href="" class="nav-link text-white">Messages</a></li> <!--message between accounts like instagram DMs-->
               </ul>
           </div>
@@ -95,26 +95,33 @@
                         <h5>Service Title</h5>
                         <input class="multisteps-form__input form-control" type="text" placeholder="Title">
                       </div>
-                      <div class="col-12 col-sm-6 mt-4 mt-sm-0">
+
+                      <div class="form-row mt-4">
+                      <div class="col-12 col-sm-8 mt-4 mt-sm-0">
                         <h5>Service Description</h5>
-                        <input class="multisteps-form__input form-control" type="text" placeholder="Description">
+                        
+                        <textarea class="form-control" id="taskDescription" rows="3" placeholder="Please describe important ideas about your service"></textarea>
                       </div>
                     </div>
+                  </div>
                     
                     <div class="form-row mt-4">
                       <h6>Would you like to include an image of your services?</h6>
-                      <div class="col-12 col-md-6 mt-4">
-                        <div class="card shadow-sm">
-                          <div class="card-body">
-                              <h5 class="card-title">Service Image</h5>
+                      <div class="col-12 col-md-8 mt-4 input-group form-group">
+                          <div class="input-group mb-3">
+                            <label class="input-group-text" for="insertImageBtn serviceImage">Insert Image</label>
       
-                              <!-- Use a button for inserting image -->
-                              <button type="button" class="btn btn-primary" id="insertImageBtn">Insert Image</button>
-                          </div>
+                            <!-- Use a button for inserting image -->
+                            <input type="file" class="form-control" id="insertImageBtn serviceImage" placeholder="Insert Image"></input>
+                        </div>
                       </div>
-                      </div>
-
                     </div>
+
+
+
+
+
+
 
                     <div class="button-row d-flex mt-4">
                       <button class="btn btn-primary ml-auto js-btn-next" type="button" title="Next">Next</button>
