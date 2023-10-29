@@ -22,7 +22,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark  p-3 fixed-top" style="background-color: #22a32b;"> <!-- padding of 3-->
 
             <div class="container-fluid">
-              <a href="login.html" class="navbar-brand text-white">TaskCash</a> <!-- Shoudl take you to top of page-->
+              <a href="index.html" class="navbar-brand text-white">TaskCash</a> <!-- Shoudl take you to top of page-->
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
                 <span class="navbar-toggler-icon"></span>
@@ -100,27 +100,35 @@
 
                         <!--Start information input here-->
 
-                        <div class="col-12 col-md-6 mt-4">
-                          <div class="card shadow-sm">
-
-                            <div class="card-body">
+                        <div class="col-12 col-md-6 mt-4 input-group form-group">
                                 <h5 class="card-title">Task Image</h5>
+                        </div>
+
+
+                        <div class="col-12 col-md-6 mt-4 input-group form-group">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="insertImageBtn taskImage">Insert Image</label>
     
                                 <!-- Use a button for inserting image -->
-                                <button type="button" class="btn btn-primary" id="insertImageBtn taskImage">Insert Image</button>
+                                <input type="file" class="form-control" id="insertImageBtn taskImage" placeholder="Insert Image"></input>
                             </div>
+                        
                         </div>
-                        </div>
-                        <div class="form-row mt-4">
+
+
+
+                        <div class="form-row mt-4 form-group input-group">
                         <div class="col">
                           <h5>Task Title</h5>
                           <input id="taskTitle" class="multisteps-form__input form-control" type="text" placeholder="title">
                         </div>
                       </div>
-                      <div class="form-row mt-4">
+                      <div class="form-row mt-4 form-group">
                         <div class="col">
-                          <h5>Task description</h5>
-                          <input id="taskDescription" class="multisteps-form__input form-control description" type="text" placeholder="Please describe important ideas about the task">
+
+                          <label for="taskDescription" class="form-label mt-4">Task Description</label>
+                          <textarea class="form-control" id="taskDescription" rows="3" placeholder="Please describe important ideas about the task"></textarea>
+                          
                         </div>
                       </div>
                       <div class="form-row mt-4">
@@ -233,6 +241,7 @@
                               <label class="form-check-label" for="flexCheckDefault">
                                 Children  
                               </label>
+                              <br><br>
                               <div class="form-row">
 
                               <input class="multisteps-form__input form-check-input" type="checkbox" value="taskPhysical" id="flexCheckDefault taskPhysical"> <!-- taskOnline and noTaskTime used here-->

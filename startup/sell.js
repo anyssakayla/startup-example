@@ -160,7 +160,7 @@ document.querySelector('#taskForm').addEventListener('submit', function(event) {
   const taskDescription = document.querySelector('#taskDescription').value;
   const taskPrice = document.querySelector('#taskPrice').value;
   const taskImageElement = document.querySelector('#taskImage'); 
-  console.log(taskTitle);
+  //console.log(taskTitle);
   let taskImage = '';
   if(taskImageElement && taskImageElement.value){ //have to check if user inputted an image
     taskImage = taskImageElement.value;
@@ -180,7 +180,33 @@ document.querySelector('#taskForm').addEventListener('submit', function(event) {
   tasks.push(task);
   localStorage.setItem('taskData', JSON.stringify(tasks));
   
+  
   // Redirect to buy.html or any other page you want
   window.location.href = 'buy.html';
 });
+
+
+
+
+//trying to use data manager to store the task data awith local storGE
+// import DataManager from './DataManager.js'; //can't use outside module?
+
+// // Retrieve form data
+// const taskTitle = document.querySelector('#taskTitle').value;
+// const taskDescription = document.querySelector('#taskDescription').value;
+// const taskPrice = document.querySelector('#taskPrice').value;
+// const taskImage = document.querySelector('#taskImage').value;
+
+// // Create a task object with form data
+// const task = {
+//   title: taskTitle,
+//   description: taskDescription,
+//   price: taskPrice,
+//   image: taskImage,
+// };
+// console.log('task'); //see if it is showing data on console
+
+// // Save task data using DataManager
+// DataManager.saveTaskData(task);
+
 //});

@@ -71,11 +71,14 @@ body {
 .text-container {
     flex: 1; /* Take up remaining horizontal space */
     padding: 20px;
+    padding-left: 100px;
 }
 
 .TaskImage-container img {
     width: 100%; /* Make the image fill the container */
-    height: auto;
+    height: 350px;
+    width: 450px;
+    align-items: center;
 }
 .skillCheckBox{
     margin-right: 10px;
