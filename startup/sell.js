@@ -1,3 +1,12 @@
+
+const mongoose = require('mongoose');
+//connect to mongodb      //scroll right                         //might have to change out this TaskCash
+const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true}) 
+.then((result) => console.log('connected to db'))
+.catch((err) => console.log(err));
+
+
 // DOM elements
 const DOMstrings = {
     stepsBtnClass: 'multisteps-form__progress-btn',
