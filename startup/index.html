@@ -130,16 +130,16 @@ body{
             </div>
             <div class="modal-body p-4" action="buy.html">
                 <form id="loginForm" method="get" action="buy.html">
-                    <!-- Email input -->
+                    <!-- username input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="email1" class="form-control" />
-                        <label class="form-label" for="email1">Email address</label>
+                        <input type="text" id="usernameLogin" name="usernameLogin" class="form-control" />
+                        <label class="form-label" for="usernameLogin">Username</label>
                     </div>
 
                     <!-- password input -->
                     <div class="form-outline mb-4">
-                        <input type="password" id="password1" class="form-control" />
-                        <label class="form-label" for="password1">Password</label>
+                        <input type="password" id="passwordLogin" name="passwordLogin" class="form-control" />
+                        <label class="form-label" for="passwordLogin">Password</label>
                     </div>
 
                     <!-- Submit button -->
@@ -150,10 +150,7 @@ body{
     </div>
 </div> <!-- must implement the submit button to go to buy.html-->
 
-
 <!--  - - -- - -   - -   Signup modal form - -  - - - - - --- - --->
-
-
 <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -163,21 +160,21 @@ body{
             </div>
             <div class="modal-body">
 
-<form id="signupForm" method="get" action="buy.html">
+<form id="signupForm" method="post" action="buy.html">
     <div class="form-row">
   <div class="col-md-8 mb-3 form-group">
     <label for="firstName">First Name</label>
-    <input type="text" id="firstName" class="form-control" required>
+    <input type="text" id="firstName" name="firstName" class="form-control" required>
   </div>
 
   <div class="col-md-8 mb-3 form-group">
     <label for="lastName">Last Name</label>
-    <input type="text" class="form-control" id="lastName"  required>
+    <input type="text" class="form-control" id="lastName" name="lastName" required>
   </div>
 
   <div class="col-md-8 mb-3 form-group"> <!--take off form-group since it is put twice-->
     <label for="username">Username</label>
-      <input type="text" class="form-control" id="username" required>
+      <input type="text" class="form-control" id="username" name="username" required>
   </div>
 </div>
 
@@ -189,7 +186,7 @@ body{
 
   <div class="col-md-8 mb-3 form-group">
     <label for="password">Password</label>
-    <input type="text" class="form-control" id="password" placeholder="Minimum 5 characters" required>
+    <input type="text" class="form-control" id="password" name="password" placeholder="Minimum 5 characters" required>
   </div>
   <div class="col-md-8 mb-3 form-group">
     <label for="password-confirm">Confirm Password</label>
@@ -212,13 +209,20 @@ body{
     </div>
 </div>
 
+
   <!--End of signup form-->
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+<!-- jQuery Validation -->
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"  -->
+    <!-- integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+    crossorigin="anonymous"></script> -->
     <script src="index.js"></script>
 </body>
 

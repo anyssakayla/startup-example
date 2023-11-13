@@ -1,7 +1,7 @@
-$(document).ready(function () {
 
+$(document).ready(function () {
 	$.validator.setDefaults({
-	    highlight: function(element) {
+	    highlight: function(element) { //validating that all signup information is inputted
 	        $(element).closest(".form-group").addClass("has-error");
 	    },
 
@@ -71,4 +71,56 @@ $(document).ready(function () {
 			}
 		}
 	});
-});
+
+    // event listener to the submit button
+    $('#signupForm').on('submit', function (event) {
+
+		event.preventDefault();
+      if ($('#signupForm').valid()) {
+        // Serialize the form data
+        const formData = $('#signupForm').serialize();
+
+        //request to the server
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost:8080/signup',
+          data: JSON.stringify({formData}),
+		  contentType: 'application/json',
+          success: function (response) {
+            console.log('User successfully registered:', response);
+			window.location.href = 'buy.html';
+            // success message then redirect to a new page)
+          },
+          error: function (error) {
+            console.error('Error registering user:', error.responseText);
+            // error message to the user)
+          },
+        });
+      }
+    });
+
+
+	$('#loginForm').on('submit', function (event) {
+        event.preventDefault();
+        if ($('#loginForm').valid()) {
+            const formData = $('#loginForm').serialize();
+
+            // request to the server for login
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8080/login',
+                data: JSON.stringify({ formData }),
+                contentType: 'application/json',
+                success: function (response) {
+                    console.log('User successfully logged in:', response);
+                    window.location.href = 'buy.html';
+                },
+                error: function (error) {
+                    console.error('Error logging in:', error.responseText);
+                    // handle login error (e.g., show error message to the user)
+                },
+            });
+        }
+    });
+  });
+	
