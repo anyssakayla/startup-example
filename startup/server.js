@@ -10,6 +10,7 @@ app.use(cors());
 const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 
+//schema for user
 const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
@@ -19,6 +20,38 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
+
+//schema for task
+//does number need to be int? 
+const taskSchema = new mongoose.Schema({
+    taskImage: String,
+    taskTitle: String,
+    taskDescription: String,
+    taskPrice: Number,
+    taskAddress1: String,
+    taskAddress2: String,
+    taskCity: String,
+    taskState: String,
+    taskZip: String,
+    taskOnline: Boolean,
+    taskDate: Date,
+    noTaskDate: Boolean,
+    taskTime: String,
+    noTaskTime: Boolean,
+    noSkills: Boolean,
+    taskAnimal: Boolean,
+    taskTech: Boolean,
+    taskArt: Boolean,
+    taskChildren: Boolean,
+    taskPhysical: Boolean,
+    taskOrganize: Boolean,
+    taskLanguage: Boolean,
+    taskSocial: Boolean,
+    taskSuppliesProvided: Boolean,
+    taskSuppliesNeeded: Boolean,
+  });
+  
+  const Task = mongoose.model('Task', taskSchema);
 
 app.use(bodyParser.json());
 //app.use(express.static('public'));
@@ -49,14 +82,13 @@ app.post('/signup', async (req, res) => {
 });
 
 //for the login form
-// ... (previous code)
 
 app.post('/login', async (req, res) => {
     try {
         console.log('Received login request:', req.body);
         const formData = new URLSearchParams(req.body.formData);
 
-        // Check if the username and password match in the database
+        // Check if the username and password are in the database
         const user = await User.findOne({
             username: formData.get('username'),
             password: formData.get('password'),
@@ -74,6 +106,56 @@ app.post('/login', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+
+//for handing the task form:
+app.post('/taskForm', async (req, res) => {
+    try {
+      console.log('Received task form data:', req.body);
+
+      //    const formData = new URLSearchParams(req.body.formData);
+
+      // Extract data from the request body
+      const formData = new URLSearchParams(req.body.formData);
+  
+      // Create a new task using the Task model
+      //do we need to use .get ??
+      const newTask = new Task({
+        taskImage: formData.get('taskImage'),
+        taskTitle: formData.get('taskTitle'),
+        taskDescription: formData.get('taskDescription'),
+        taskPrice: formData.get('taskPrice'),
+        taskAddress1: formData.get('taskAddress1'),
+        taskAddress2: formData.get('taskAddress2'),
+        taskCity: formData.get('taskCity'),
+        taskState: formData.get('taskState'),
+        taskZip: formData.get('taskZip'),
+        taskOnline: formData.taskOnline === 'true', 
+        taskDate: formData.taskDate,
+        noTaskDate: formData.noTaskDate === 'true',
+        taskTime: formData.taskTime,
+        noTaskTime: formData.noTaskTime === 'true',
+        noSkills: formData.noSkills === 'true',
+        taskAnimal: formData.taskAnimal === 'true',
+        taskTech: formData.taskTech === 'true',
+        taskArt: formData.taskArt === 'true',
+        taskChildren: formData.taskChildren === 'true',
+        taskPhysical: formData.taskPhysical === 'true',
+        taskOrganize: formData.taskOrganize === 'true',
+        taskLanguage: formData.taskLanguage === 'true',
+        taskSocial: formData.taskSocial === 'true',
+        taskSuppliesProvided: formData.taskSuppliesProvided === 'true',
+        taskSuppliesNeeded: formData.taskSuppliesNeeded === 'true',
+      });
+
+      const savedTask = await newTask.save();
+  
+      res.status(201).json(savedTask);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
 
 

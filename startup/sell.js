@@ -1,10 +1,10 @@
 
-const mongoose = require('mongoose');
-//connect to mongodb      //scroll right                         //might have to change out this TaskCash
-const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
-mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true}) 
-.then((result) => console.log('connected to db'))
-.catch((err) => console.log(err));
+// const mongoose = require('mongoose');
+// //connect to mongodb      //scroll right                         //might have to change out this TaskCash
+// const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
+// mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true}) 
+// .then((result) => console.log('connected to db'))
+// .catch((err) => console.log(err));
 
 
 // DOM elements
@@ -156,66 +156,32 @@ const DOMstrings = {
     });
 });
 
-//document.addEventListener('DOMContentLoaded', function(){ //unnecessary since .js is at the end of the body in html
-document.querySelector('#taskForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
-  
-  //close the form and alert the user of
-  //document.querySelector('#taskForm').style.display = 'none';
-  console.log('The task has been listed!');
-  window.alert('The task has been listed!');
-  // Get form values
-  const taskTitle = document.querySelector('#taskTitle').value;
-  const taskDescription = document.querySelector('#taskDescription').value;
-  const taskPrice = document.querySelector('#taskPrice').value;
-  const taskImageElement = document.querySelector('#taskImage'); 
-  //console.log(taskTitle);
-  let taskImage = '';
-  if(taskImageElement && taskImageElement.value){ //have to check if user inputted an image
-    taskImage = taskImageElement.value;
+
+$('#taskForm').on('submit', function (event) {
+  event.preventDefault();
+  if ($('#taskForm').valid()) {
+      const formData = $('#taskForm').serialize();
+
+      //send the form data 
+      $.ajax({
+        type: 'POST',
+        url: 'http://localhost:8080/taskForm', 
+        contentType: 'application/json',
+        data: JSON.stringify({formData}),
+        success: function (response) {
+          console.log('Task form data sent successfully:', response);
+         // window.log('Your task has been submitted');
+          window.location.href = 'sell.html';
+
+        },
+        error: function (error) {
+          console.error('Error sending task form data:', error);
+          // Handle error if needed
+        },
+      });
   }
-
-  // Create a task object with form data
-  const task = {
-    title: taskTitle,
-    description: taskDescription,
-    price: taskPrice,
-    image: taskImage
-  };
-
-  // Store the task data (you can use localStorage, sessionStorage, or send it to a server)
-  // For example, using localStorage:
-  const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-  tasks.push(task);
-  localStorage.setItem('taskData', JSON.stringify(tasks));
-  
-  
-  // Redirect to buy.html or any other page you want
-  window.location.href = 'buy.html';
 });
 
 
 
 
-//trying to use data manager to store the task data awith local storGE
-// import DataManager from './DataManager.js'; //can't use outside module?
-
-// // Retrieve form data
-// const taskTitle = document.querySelector('#taskTitle').value;
-// const taskDescription = document.querySelector('#taskDescription').value;
-// const taskPrice = document.querySelector('#taskPrice').value;
-// const taskImage = document.querySelector('#taskImage').value;
-
-// // Create a task object with form data
-// const task = {
-//   title: taskTitle,
-//   description: taskDescription,
-//   price: taskPrice,
-//   image: taskImage,
-// };
-// console.log('task'); //see if it is showing data on console
-
-// // Save task data using DataManager
-// DataManager.saveTaskData(task);
-
-//});
