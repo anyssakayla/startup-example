@@ -24,7 +24,7 @@ const User = mongoose.model('User', userSchema);
 //schema for task
 //does number need to be int? 
 const taskSchema = new mongoose.Schema({
-    taskImage: String,
+    taskImage: File,
     taskTitle: String,
     taskDescription: String,
     taskPrice: Number,
@@ -112,8 +112,6 @@ app.post('/login', async (req, res) => {
 app.post('/taskForm', async (req, res) => {
     try {
       console.log('Received task form data:', req.body);
-
-      //    const formData = new URLSearchParams(req.body.formData);
 
       // Extract data from the request body
       const formData = new URLSearchParams(req.body.formData);

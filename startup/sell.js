@@ -166,8 +166,9 @@ $('#taskForm').on('submit', function (event) {
       $.ajax({
         type: 'POST',
         url: 'http://localhost:8080/taskForm', 
-        contentType: 'application/json',
         data: JSON.stringify({formData}),
+        contentType: 'application/json',
+        
         success: function (response) {
           console.log('Task form data sent successfully:', response);
          // window.log('Your task has been submitted');
