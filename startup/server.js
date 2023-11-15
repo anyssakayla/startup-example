@@ -24,7 +24,7 @@ const User = mongoose.model('User', userSchema);
 //schema for task
 //does number need to be int? 
 const taskSchema = new mongoose.Schema({
-    taskImage: File,
+    taskImage: String,
     taskTitle: String,
     taskDescription: String,
     taskPrice: Number,
@@ -112,38 +112,38 @@ app.post('/login', async (req, res) => {
 app.post('/taskForm', async (req, res) => {
     try {
       console.log('Received task form data:', req.body);
-
+      
       // Extract data from the request body
-      const formData = new URLSearchParams(req.body.formData);
+      const formData = req.body.formData;
   
       // Create a new task using the Task model
       //do we need to use .get ??
       const newTask = new Task({
-        taskImage: formData.get('taskImage'),
-        taskTitle: formData.get('taskTitle'),
-        taskDescription: formData.get('taskDescription'),
-        taskPrice: formData.get('taskPrice'),
-        taskAddress1: formData.get('taskAddress1'),
-        taskAddress2: formData.get('taskAddress2'),
-        taskCity: formData.get('taskCity'),
-        taskState: formData.get('taskState'),
-        taskZip: formData.get('taskZip'),
-        taskOnline: formData.taskOnline === 'true', 
+        taskImage: formData.taskImage,
+        taskTitle: formData.taskTitle,
+        taskDescription: formData.taskDescription,
+        taskPrice: formData.taskPrice,
+        taskAddress1: formData.taskAddress1,
+        taskAddress2: formData.taskAddress2,
+        taskCity: formData.taskCity,
+        taskState: formData.taskState,
+        taskZip: formData.taskZip,
+        taskOnline: formData.taskOnline, 
         taskDate: formData.taskDate,
-        noTaskDate: formData.noTaskDate === 'true',
+        noTaskDate: formData.noTaskDate,
         taskTime: formData.taskTime,
-        noTaskTime: formData.noTaskTime === 'true',
-        noSkills: formData.noSkills === 'true',
-        taskAnimal: formData.taskAnimal === 'true',
-        taskTech: formData.taskTech === 'true',
-        taskArt: formData.taskArt === 'true',
-        taskChildren: formData.taskChildren === 'true',
-        taskPhysical: formData.taskPhysical === 'true',
-        taskOrganize: formData.taskOrganize === 'true',
-        taskLanguage: formData.taskLanguage === 'true',
-        taskSocial: formData.taskSocial === 'true',
-        taskSuppliesProvided: formData.taskSuppliesProvided === 'true',
-        taskSuppliesNeeded: formData.taskSuppliesNeeded === 'true',
+        noTaskTime: formData.noTaskTime,
+        noSkills: formData.noSkills,
+        taskAnimal: formData.taskAnimal,
+        taskTech: formData.taskTech,
+        taskArt: formData.taskArt,
+        taskChildren: formData.taskChildren,
+        taskPhysical: formData.taskPhysical,
+        taskOrganize: formData.taskOrganize,
+        taskLanguage: formData.taskLanguage,
+        taskSocial: formData.taskSocial,
+        taskSuppliesProvided: formData.taskSuppliesProvided,
+        taskSuppliesNeeded: formData.taskSuppliesNeeded,
       });
 
       const savedTask = await newTask.save();
@@ -160,4 +160,3 @@ app.post('/taskForm', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
-
