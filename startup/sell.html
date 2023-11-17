@@ -91,7 +91,7 @@
               <!-- form panels -->
        <div class="row">
        <div class="col-12 col-lg-8 m-auto">
-        <form id="taskForm" class="multisteps-form__form" method="post" action="sell.html">
+        <form id="taskForm" class="multisteps-form__form" method="post" action="http://localhost:8080/taskForm" enctype="multipart/form-data">
     
                     <!-- single form panel -->
                     <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active" data-animation="scaleIn">
@@ -109,7 +109,7 @@
                             <div class="input-group mb-3">
                                 <label class="input-group-text" for="insertImageBtn taskImage">Insert Image</label>
                                 <!-- Use a button for inserting image -->
-                                <input type="file" class="form-control" id="insertImageBtn taskImage" name="taskImage" placeholder="Insert Image"></input>
+                                <input type="file" class="form-control" id="taskImage" name="taskImage" placeholder="Insert Image" required></input>
                             </div>
                         
                         </div>
@@ -276,7 +276,7 @@
                         <!--For previous and submit button-->
                         <div class="button-row d-flex mt-4">
                           <button class="btn btn-primary js-btn-prev" type="button" title="Prev">Prev</button>
-                          <button class="btn btn-success ml-auto js-btn-submit" type="button submit" title="Send">Submit Task</button>
+                          <button class="btn btn-success ml-auto js-btn-submit" type="submit" title="Send">Submit Task</button>
                         </div>
                         </div>
                       </div>
@@ -304,6 +304,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+  
     <script src="sell.js"></script>
   </body>
 </html>

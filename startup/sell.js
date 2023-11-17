@@ -119,58 +119,42 @@ const setAnimationType = newType => {
   });
 };
 
-// selector onchange - changing animation (optional)
-// document.addEventListener('DOMContentLoaded', function(){
-// const animationSelect = document.querySelector('.pick-animation__select');
-// animationSelect.addEventListener('change', () => {
-//   const newAnimationType = animationSelect.value;
-//   setAnimationType(newAnimationType);
-// });
-// });
-
-//For getting the Task Image
-// $(document).ready(function() {
-//   $('#insertImageBtn').on('click', function() {
-//       var fileInput = $('#image')[0];
-//       var file = fileInput.files[0];
-      
-//       // Perform actions with the selected file, such as displaying it or uploading it to a server
-//       // You can use FileReader to read the selected file and display it on the page
-//       var reader = new FileReader();
-//       reader.onload = function(e) {
-//           // e.target.result contains the data URL for the image
-//           var imageUrl = e.target.result;
-//           // Perform actions to display the image, e.g., set it as the source of an <img> element
-//           // Example: $('#previewImage').attr('src', imageUrl);
-//       };
-//       reader.readAsDataURL(file);
-//   });
-// });
 
 
 $('#taskForm').on('submit', function (event) {
 event.preventDefault();
 if ($('#taskForm').valid()) {
     //const formData = $('#taskForm').serialize();
-    const formData = {};
+    const formData = new FormData();
 
     $('#taskForm .multisteps-form__input').each(function (){
       const inputType = $(this).attr('type');
       const inputName = $(this).attr('name');
 
       if(inputType == 'checkbox'){
-        formData[inputName] = $(this).prop('checked');
+        formData.append(inputName, $(this).prop('checked'));
+       // formData[inputName] = $(this).prop('checked');
       }
       else{
-        formData[inputName] = $(this).val();
+        formData.append(inputName, $(this).val());
+       // formData[inputName] = $(this).val();
       }
     });
+
+    //start dealing with image input
+    const fileInput = $('#taskImage')[0];
+    const file = fileInput.files[0];
+    formData.append('taskImage', file);
+    console.log(file);
+    console.log(formData);
+    
     //send the form data 
     $.ajax({
       type: 'POST',
       url: 'http://localhost:8080/taskForm', 
-      data: JSON.stringify({formData}),
-      contentType: 'application/json',
+      data: formData,
+      contentType: false,
+      processData: false,
       
       success: function (response) {
         console.log('Task form data sent successfully:', response);

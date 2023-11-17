@@ -1,7 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const Grid = require('gridfs-stream');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const multer = require('multer'); //for the image
+const path = require('path');
+const fs = require('fs'); 
+
+const upload = multer({ dest: 'uploads/'});
+//const storage = multer.memoryStorage();
+//const upload = multer({storage : storage });
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -9,7 +17,7 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
-
+app.use('/uploads', express.static('uploads'));
 //schema for user
 const userSchema = new mongoose.Schema({
   firstName: String,
@@ -109,17 +117,18 @@ app.post('/login', async (req, res) => {
 
 
 //for handing the task form:
-app.post('/taskForm', async (req, res) => {
+app.post('/taskForm', upload.single('taskImage'), async (req, res) => {
     try {
+      console.log('Received file:', req.file);
       console.log('Received task form data:', req.body);
       
       // Extract data from the request body
-      const formData = req.body.formData;
-  
+      const formData = req.body;
+      const taskImage = req.file;
       // Create a new task using the Task model
       //do we need to use .get ??
       const newTask = new Task({
-        taskImage: formData.taskImage,
+        taskImage: taskImage.filename,
         taskTitle: formData.taskTitle,
         taskDescription: formData.taskDescription,
         taskPrice: formData.taskPrice,
