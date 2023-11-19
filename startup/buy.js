@@ -1,42 +1,120 @@
-const taskData = JSON.parse(localStorage.getItem('taskData'));
 
-// Assuming taskImage is passed as a parameter when creating the card
-function createTaskCard(taskTitle, taskDescription, taskPrice, taskImage) {
+
+const endpoint = 'http://localhost:8080/buy.js'; 
+
+// Fetch data from MongoDB
+fetch(endpoint)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
     const cardContainer = document.getElementById('cardContainer');
-    const card = document.createElement('div');
-    card.className = 'cardcontainer col-xl-3 col-lg-4 col-md-5 col-sm-6 mb-4 mb-lg-0 shadow-sm border-0 rounded';
+    const tasks = data.tasks || [];
 
-    // If taskImage is provided, create an image element
-    if (taskImage) {
-      const image = document.createElement('photo');
-      image.a
-      image.src = taskImage;
-      image.className = 'card-img-top';
-      card.appendChild(image);
-        // const image = document.createElement('img');
-        // image.src = taskImage;
-        // image.className = 'card-img-top';
-        // card.appendChild(image);
+  
+
+    tasks.forEach(task => {
+// Check if the task has these properties
+if (task && task.taskTitle && task.taskDescription && task.taskPrice) {
+  // Create a card for each task
+  let imageContainer;
+  const card = document.createElement('div');
+  card.className = 'cardcontainer col-xl-3 col-lg-4 col-md-5 col-sm-6 mb-4 mb-lg-0 shadow-sm border-0 rounded';
+
+  // If taskImage is provided, create an image element
+  if (task.taskImage) {
+    //console.log(taskImage);
+    imageContainer = document.createElement('div'); //making a container so price could join
+    imageContainer.className = 'image-container position-relative';
+
+    const image = document.createElement('img');
+    const possibleExtensions = ['jpg', 'jpeg', 'png'];
+
+    // Try each extension
+    let found = false;
+    for (const fileExtension of possibleExtensions) {
+      const imagePath = `uploads/${task.taskImage}`;
+      // Check if the file exists
+      if (fileExists(imagePath)) { //do i need await here?
+        image.src = imagePath;
+        found = true;
+        break;
+      }
     }
+    if (!found) {
+      // If no valid image is found, use default image
+      image.src = 'images/default.jpg';
+    }
+    image.className = 'card-img-top';
+    imageContainer.appendChild(image);
 
-    const cardBody = document.createElement('div');
-    cardBody.className = 'card-body';
+    const price = document.createElement('div');
+    price.className = 'taskPrice position-absolute bottom-0 start-0 m-2';
+    price.id = 'taskPrice';
+    price.textContent = `$${task.taskPrice}`;
+    imageContainer.appendChild(price);
+   // cardBody.appendChild(price);
 
-    const title = document.createElement('h5');
-    title.className = 'card-title';
-    title.textContent = taskTitle;
-    cardBody.appendChild(title);
 
-    // Add other task details to the card body...
+   // card.appendChild(imageContainer);
+  }else{
+    imageContainer = document.createElement('div'); //making a container so price could join
+    imageContainer.className = 'image-container position-relative';
+    const image = document.createElement('img');
+    image.src = 'images/default.jpg';
+    image.className = 'card-img-top';
+    imageContainer.appendChild(image);
+    //card.appendChild(image);
 
-    card.appendChild(cardBody);
-    cardContainer.appendChild(card);
+    const price = document.createElement('div');
+    price.className = 'taskPrice position-absolute top-10 start-0 m-2';
+    price.id = 'taskPrice';
+    price.textContent = `$${task.taskPrice}`;
+    imageContainer.appendChild(price);
+  }
+  if(imageContainer){
+    card.appendChild(imageContainer);
+  }
+  
+
+  const cardBody = document.createElement('div');
+  cardBody.className = 'card-body';
+  cardBody.style.padding = '10px';
+
+  const title = document.createElement('h5');
+  title.className = 'card-title';
+  title.textContent = task.taskTitle;
+  cardBody.appendChild(title);
+
+  if (task.taskDescription) {
+    const description = document.createElement('p');
+    description.className = 'card-text';
+    description.textContent = task.taskDescription;
+    cardBody.appendChild(description);
+  }
+
+  
+
+  card.appendChild(cardBody);
+
+  // const footer = document.createElement('div');
+  // footer.className = 'footer';
+  // card.appendChild(footer);
+
+  cardContainer.appendChild(card);
 }
+});
+  })
+  .catch(error => console.error('Error fetching tasks:', error));
 
-// Call the function with retrieved task details
-if (taskData) {
-  createTaskCard(taskData.title, taskData.description, taskData.price, taskData.image);
-}
+  async function fileExists(url) { //checks if file for image exists
+    try {
+      const response = await fetch(url, { method: 'HEAD' });
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
+  }
+
 
 //for the locaion button, offcanvas, and input
 document.addEventListener('DOMContentLoaded', function() {

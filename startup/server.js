@@ -164,7 +164,40 @@ app.post('/taskForm', upload.single('taskImage'), async (req, res) => {
     }
   });
 
+  //used to get data from mongodb
+  const { MongoClient } = require("mongodb");
+  const client = new MongoClient(dbURI);
+  async function run() {
+    try {
+      await client.connect();
 
+      const db = client.db("TaskCash");
+      const coll = db.collection("tasks");
+
+      const cursor = coll.find();
+
+      await cursor.forEach(console.log);
+    } finally {
+      // Ensures that the client will close when you finish/error
+     // await client.close();
+    }
+  }
+  run().catch(console.dir);
+
+  //just added this for the buy.js
+  app.get('/buy.js', async (req, res) => {
+    try {
+      const db = client.db("TaskCash");
+      const coll = db.collection("tasks");
+      const tasks = await coll.find().toArray();
+  
+      res.setHeader('Content-Type', 'application/javascript');
+      res.json({tasks});
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
