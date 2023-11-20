@@ -162,9 +162,9 @@ function geoFindMe() {
     mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
     mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
     
-    getZipCode(latitude, longitude);
+    getZipCode(latitude, longitude); //still deciding if i want to do this part cause costs money
     function getZipCode(latitude, longitude) { //I have to use open cage to get actual zip code, but have to pay for it
-      const apiKey = "YOUR_OPEN_CAGE_API_KEY"; // Replace with your OpenCage API key
+      const apiKey = "YOUR_OPEN_CAGE_API_KEY"; // Replace with OpenCage API key
       const url = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
     
       fetch(url)

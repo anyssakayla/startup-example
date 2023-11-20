@@ -27,7 +27,7 @@ const findParent = (elem, parentClass) => {
   return currentNode;
 };
 
-// get active button step number
+
 const getActiveStep = elem => {
   return Array.from(DOMstrings.stepsBtns).indexOf(elem);
 };
@@ -42,7 +42,7 @@ const setActiveStep = activeStepNum => {
   });
 };
 
-// get active panel
+
 const getActivePanel = () => {
   let activePanel;
   DOMstrings.stepFormPanels.forEach(elem => {
@@ -53,7 +53,7 @@ const getActivePanel = () => {
   return activePanel;
 };
 
-// open active panel (and close inactive panels)
+
 const setActivePanel = activePanelNum => {
   removeClasses(DOMstrings.stepFormPanels, 'js-active');
   DOMstrings.stepFormPanels.forEach((elem, index) => {
@@ -64,7 +64,6 @@ const setActivePanel = activePanelNum => {
   });
 };
 
-// set form height equal to current panel height
 const formHeight = activePanel => {
   const activePanelHeight = activePanel.offsetHeight;
   DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
@@ -75,7 +74,7 @@ const setFormHeight = () => {
   formHeight(activePanel);
 };
 
-// STEPS BAR CLICK FUNCTION
+
 DOMstrings.stepsBar.addEventListener('click', e => {
   const eventTarget = e.target;
   if (!eventTarget.classList.contains(DOMstrings.stepsBtnClass)) {
@@ -106,13 +105,13 @@ DOMstrings.stepsForm.addEventListener('click', e => {
   setActivePanel(activePanelNum);
 });
 
-// SETTING PROPER FORM HEIGHT ONLOAD
+
 window.addEventListener('load', setFormHeight, false);
 
-// SETTING PROPER FORM HEIGHT ONRESIZE
+// set the height
 window.addEventListener('resize', setFormHeight, false);
 
-// changing animation via animation select (optional)
+// not implementing this anymore but saving it if i want to reimplement later
 const setAnimationType = newType => {
   DOMstrings.stepFormPanels.forEach(elem => {
     elem.dataset.animation = newType;

@@ -2,13 +2,13 @@
 
 @font-face {
     font-family: 'Bebas Neue';
-    src: url('fonts/BebasNeue.otf') format('opentype'); /* Update the filename if your font file has a different name */
+    src: url('fonts/BebasNeue.otf') format('opentype'); 
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'Aku&Kamu';
-    src: url('fonts/Aku&Kamu.otf') format('opentype'); /* Update the filename if your font file has a different name */
+    src: url('fonts/Aku&Kamu.otf') format('opentype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -29,9 +29,9 @@ h1{
 }
 .card-container-wrapper {
     display: flex;
-    justify-content: space-between; /* Adjust as needed for the desired space between card containers */
-    flex-wrap: wrap; /* Allows the cards to wrap to the next line if there are too many to fit */
-    padding: 15px; /* Add padding between card containers */
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    padding: 15px; 
 }
 .card-container {
     max-width: 350px;
@@ -42,7 +42,6 @@ h1{
     background-color: white;
     border-radius: 12px;
     margin-bottom: 20px; 
-    /* Rest of your card-container styles */
 }
 .cardcontainer{
     max-width: 350px;
@@ -62,19 +61,19 @@ h1{
     margin-left: 1.5rem!important;
     margin-right: 1.5rem!important;
 }
-.cardcontainer:hover > photo{ /* The size of the photo with hover was messing with spacing*/
+.cardcontainer:hover > photo{ 
     height: 200px;
     animation: none;
     
 }
 #card-container .col-md-3 {
-    margin-bottom: 20px; /* Add margin between cards */
+    margin-bottom: 20px; /* margin between cards */
 }
 
 .photo{
     height: 300px;
     width: 100%;
-    overflow: hidden; /* Hide the overflow*/
+    overflow: hidden; /* Hide the overflow, but doesn't work right*/
     transition: height 0.5s ease;
 }
 .photo img{
@@ -135,7 +134,7 @@ h1{
 }
 
 @keyframes move1{
-    0%{height: 300px} /*Set to 200 to just make image smaller*/
+    0%{height: 300px} 
     100%{height: 200px}
 }
 

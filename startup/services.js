@@ -32,7 +32,7 @@ const DOMstrings = {
     return Array.from(DOMstrings.stepsBtns).indexOf(elem);
   };
   
-  // set all steps before clicked (and clicked too) to active
+
   const setActiveStep = activeStepNum => {
     removeClasses(DOMstrings.stepsBtns, 'js-active');
     DOMstrings.stepsBtns.forEach((elem, index) => {
@@ -42,7 +42,7 @@ const DOMstrings = {
     });
   };
   
-  // get active panel
+
   const getActivePanel = () => {
     let activePanel;
     DOMstrings.stepFormPanels.forEach(elem => {
@@ -53,7 +53,7 @@ const DOMstrings = {
     return activePanel;
   };
   
-  // open active panel (and close inactive panels)
+
   const setActivePanel = activePanelNum => {
     removeClasses(DOMstrings.stepFormPanels, 'js-active');
     DOMstrings.stepFormPanels.forEach((elem, index) => {
@@ -64,7 +64,7 @@ const DOMstrings = {
     });
   };
   
-  // set form height equal to current panel height
+
   const formHeight = activePanel => {
     const activePanelHeight = activePanel.offsetHeight;
     DOMstrings.stepsForm.style.height = `${activePanelHeight}px`;
@@ -75,7 +75,7 @@ const DOMstrings = {
     formHeight(activePanel);
   };
   
-  // STEPS BAR CLICK FUNCTION
+  // for steps bar that is no longer implemented but saving
   DOMstrings.stepsBar.addEventListener('click', e => {
     const eventTarget = e.target;
     if (!eventTarget.classList.contains(DOMstrings.stepsBtnClass)) {
@@ -86,7 +86,7 @@ const DOMstrings = {
     setActivePanel(activeStep);
   });
   
-  // PREV/NEXT BTNS CLICK
+  //previous and next buttons
   DOMstrings.stepsForm.addEventListener('click', e => {
     const eventTarget = e.target;
     if (
@@ -106,20 +106,20 @@ const DOMstrings = {
     setActivePanel(activePanelNum);
   });
   
-  // SETTING PROPER FORM HEIGHT ONLOAD
+
   window.addEventListener('load', setFormHeight, false);
   
-  // SETTING PROPER FORM HEIGHT ONRESIZE
+
   window.addEventListener('resize', setFormHeight, false);
   
-  // changing animation via animation select (optional)
+
   const setAnimationType = newType => {
     DOMstrings.stepFormPanels.forEach(elem => {
       elem.dataset.animation = newType;
     });
   };
   
-  // selector onchange - changing animation (optional)
+
   const animationSelect = document.querySelector('.pick-animation__select');
   animationSelect.addEventListener('change', () => {
     const newAnimationType = animationSelect.value;
@@ -131,15 +131,10 @@ const DOMstrings = {
     $('#insertImageBtn').on('click', function() {
         var fileInput = $('#image')[0];
         var file = fileInput.files[0];
-        
-        // Perform actions with the selected file, such as displaying it or uploading it to a server
-        // You can use FileReader to read the selected file and display it on the page
         var reader = new FileReader();
         reader.onload = function(e) {
-            // e.target.result contains the data URL for the image
             var imageUrl = e.target.result;
-            // Perform actions to display the image, e.g., set it as the source of an <img> element
-            // Example: $('#previewImage').attr('src', imageUrl);
+
         };
         reader.readAsDataURL(file);
     });

@@ -178,8 +178,9 @@ app.post('/taskForm', upload.single('taskImage'), async (req, res) => {
 
       await cursor.forEach(console.log);
     } finally {
-      // Ensures that the client will close when you finish/error
+      //  close when the error is done
      // await client.close();
+     //messes up when i use it
     }
   }
   run().catch(console.dir);

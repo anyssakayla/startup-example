@@ -77,7 +77,7 @@ $(document).ready(function () {
 
 		event.preventDefault();
       if ($('#signupForm').valid()) {
-        // Serialize the form data
+        // Serialize form data
         const formData = $('#signupForm').serialize();
 
         //request to the server
@@ -89,11 +89,11 @@ $(document).ready(function () {
           success: function (response) {
             console.log('User successfully registered:', response);
 			window.location.href = 'buy.html';
-            // success message then redirect to a new page)
+            // success message then redirect to a new page
           },
           error: function (error) {
             console.error('Error registering user:', error.responseText);
-            // error message to the user)
+            // error message
           },
         });
       }
@@ -117,7 +117,6 @@ $(document).ready(function () {
                 },
                 error: function (error) {
                     console.error('Error logging in:', error.responseText);
-                    // handle login error (e.g., show error message to the user)
                 },
             });
         }
