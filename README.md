@@ -48,6 +48,12 @@ Next, tasks will be displayed to the user:
 - to do this, the data will be taken from mongodb and used to create a container that displayes the available tasks on the database
 - The server must be running in order to view this
 
+### Login:
+TaskCash supports signup and login use
+- Before someone is able to login, they must signup, so their information to authenticate is in the database
+- When a user logs in, their username and matching password is authenticated
+
+
 
 ### WebSocket data: 
 Users will be able to view jobs that are listed in real time
