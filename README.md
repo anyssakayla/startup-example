@@ -4,12 +4,14 @@
 “How to make money fast?” -Everyone’s google search bar once a month. 
 Don't worry, we’ve all been there; Where we are looking for a quick way to make an extra buck, but don’t want to pick up another job… Whether it be trying to make an extra $100 for a concert or just want some extra spending cash, we've got your back. Introducing TaskCash - the ultimate platform for fast cash. You can be either a seller or a buyer. Sellers post their tasks needing to be done, and buyers complete the task and go home with cash. As a seller, you would post your task, set your price, and watch as a community of eager helpers jumps in to assist. It’s a win-win for everyone. Sellers get tasks completed and buyers get quick cash. 
 
+
+
 ## Design
-![Home page design.pdf](https://github.com/anyssakayla/startup-example/files/12707704/CS260.WEB.pdf)
+![CS260 WEB.pdf](https://github.com/anyssakayla/startup-example/files/13405992/CS260.WEB.pdf)
 
 Here is a sequence diagram that shows how to people would interact with the backend to vote.
 
-![sequenceDiagram.pdf](https://github.com/anyssakayla/startup-example/files/12707708/sequenceDiagram.pdf)
+![sequenceD.pdf](https://github.com/anyssakayla/startup-example/files/13405996/sequenceD.pdf)
 
 ##Key features
 Secure login over HTTPS
@@ -27,14 +29,24 @@ I am going to use the following technologies
 
 ### Authentication: 
 Users will have an input to create and log into their account. 
-The user's username will be displayed as well as options to design edit how thier profile looks
+Their information is saved in the database and confirmation is needed from the db everytime they attempt to login
+If a user has not signed up first, they cannot login
 
 
 ### Database data: 
+I am using mongodb to store data
 The application's database will store each the following:
-- Job information
+- Task information: This includes an image, title, description, address, and multiple checkbox for describing the task
 - Seller and buyer's information
-- Database will contain location status
+- Data from the database will be used to show the user what tasks are available (teh server must be running)
+
+### Startup Service: 
+I have edited the startup to save information from the task form a user fills out to list a task
+The task form includes an image, text boxes such as a title, description, addresses, date, time, and checkboxes to further describe the task they are listing
+The data will be sent and saved to mongodb
+Next, tasks will be displayed to the user:
+- to do this, the data will be taken from mongodb and used to create a container that displayes the available tasks on the database
+- The server must be running in order to view this
 
 
 ### WebSocket data: 
