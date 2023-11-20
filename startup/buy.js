@@ -133,8 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
   saveZipCodeButton.addEventListener('click', function() {
       const newZipCode = zipCodeInput.value;
       console.log(newZipCode);
-      // Do something with the new ZIP code (e.g., validate or process it)
-      // For example, you can update the displayed tasks based on the new ZIP code
+
       locationText.innerText = newZipCode;
       offcanvas.hide();
   });
@@ -144,8 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
   //     zipCodeInput.value = '';
   // });
 });
-
-
 
 
 
