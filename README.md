@@ -46,6 +46,7 @@ The task form includes an image, text boxes such as a title, description, addres
 The data will be sent and saved to mongodb
 Next, tasks will be displayed to the user:
 - to do this, the data will be taken from mongodb and used to create a container that displayes the available tasks on the database
+- The server must be running in order to view this
 
 
 ### WebSocket data: 
