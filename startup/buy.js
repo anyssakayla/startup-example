@@ -144,6 +144,27 @@ document.addEventListener('DOMContentLoaded', function() {
   // });
 });
 
+//when a task card is clicked, open the displayTask file to handle it
+document.addEventListener('DOMContentLoaded', function () {
+  const cardContainer = document.getElementById('cardContainer');
+
+  //  when card is clicked
+  cardContainer.addEventListener('click', function (event) {
+    const card = event.target.closest('.cardcontainer');
+    if (card) {
+      // Retrieve the data from the specific card
+      const taskTitle = card.querySelector('.card-title').textContent;
+      const taskDescription = card.querySelector('.card-text').textContent;
+      const taskPrice = card.querySelector('.taskPrice').textContent;
+
+      const taskImage = card.querySelector('.card-img-top').src;
+      // send the data to displayTask
+      window.location.href = `displayTask.html?title=${encodeURIComponent(taskTitle)}&description=${encodeURIComponent(taskDescription)}&price=${encodeURIComponent(taskPrice)}&image=${encodeURIComponent(taskImage)}`;
+    }
+  });
+
+
+});
 
 
 

@@ -6,16 +6,23 @@ const cors = require('cors');
 const multer = require('multer'); //for the image
 const path = require('path');
 const fs = require('fs'); 
+const WebSocket = require('ws'); 
+const http = require('http');
 
 const upload = multer({ dest: 'uploads/'});
 //const storage = multer.memoryStorage();
 //const upload = multer({storage : storage });
 
 const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ port: 3000 }); //works with server or port
+//const server = http.createServer(express);
+//const wss = new WebSocket.Server({ server });
 const PORT = process.env.PORT || 8080;
 
 app.use(cors());
-const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
+//const config = require('./dbConfig.json');
+const dbURI = 'mongodb+srv://anyssakayla:Ok4me2use@$taskcash.mvwvdee.mongodb.net/TaskCash?retryWrites=true&w=majority';
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });
 app.use('/uploads', express.static('uploads'));
 //schema for user
@@ -199,6 +206,47 @@ app.post('/taskForm', upload.single('taskImage'), async (req, res) => {
       res.status(500).send('Internal Server Error');
     }
   });
+
+//For the websocket
+// wss.on('connection', (socket) => {
+//   console.log('WebSocket connection opened');
+
+//   // take in WebSocket messages 
+//   socket.on('message', (message) => {
+//       console.log('Received message from client:', message);
+
+//       wss.clients.forEach(client) => {
+//           if (client !== socket && client.readyState === WebSocket.OPEN) {
+//               client.send(message);
+//           }
+//       });
+//   });
+
+//   socket.on('close', () => {
+//       console.log('WebSocket connection closed');
+//   });
+// });
+
+wss.on('connection', function connection(ws){
+  console.log('A new client connected');
+  //ws.send('Welcome');
+  ws.on('message', function incoming(message){ //change to data?
+    console.log('recieved: %s', message);
+    console.log('might be blob: ', message)
+
+    const stringMessage = message.toString('utf-8');
+    console.log(stringMessage);
+   // console.log('Recieved ${message}');
+  //  ws.send(stringMessage); //do i need to take this out?
+          wss.clients.forEach(function each(client){
+          if (client !== ws && client.readyState === WebSocket.OPEN) {
+              client.send(stringMessage);
+             // client.send(JSON.stringify(message));
+             // console.log(JSON.stringify(message));
+          }
+      });
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
