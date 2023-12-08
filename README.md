@@ -56,9 +56,10 @@ TaskCash supports signup and login use
 
 
 ### WebSocket data: 
-Users will be able to view jobs that are listed in real time
-Users will also be abel to sell in real time and list a job as completed
-Users will be able to message other users through the app
+Users will be able to message other directly using websocket
+Once they have clicked a "task" of their inteerst, there will be a comment section on the page
+In the comment section, users can chat real-time
+
 
 To complete these tasks, the application will use the following:
 - HTML
