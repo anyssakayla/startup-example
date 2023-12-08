@@ -25,6 +25,13 @@ Ability for users to report scammers
 ## Technologies
 I am going to use the following technologies
 
+## Javascript
+Javascript is used in many ways throughout the application:
+- it is used when sending data to the database
+- supports login and register functionality for users
+- used in websocket development
+- for logic throughout the application, e.g. handing buttons and forms
+- used for server handling
 ### Authentication: 
 Users will have an input to create and log into their account. 
 The user's username will be displayed as well as options to design edit how thier profile looks
