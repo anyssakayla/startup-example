@@ -27,6 +27,14 @@ Ability for users to report scammers
 ## Technologies
 I am going to use the following technologies
 
+## Javascript
+Used to implement:
+- login
+- Database data that uses mongodb
+- Create a running server
+- WebSocket chat/comment box
+- Used to connect and send data to and from the different web pages of the application
+
 ### Authentication: 
 Users will have an input to create and log into their account. 
 Their information is saved in the database and confirmation is needed from the db everytime they attempt to login
