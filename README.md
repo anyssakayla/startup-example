@@ -27,6 +27,14 @@ Ability for users to report scammers
 ## Technologies
 I am going to use the following technologies
 
+## Javascript
+Used to implement:
+- login
+- Database data that uses mongodb
+- Create a running server
+- WebSocket chat/comment box
+- Used to connect and send data to and from the different web pages of the application
+
 ### Authentication: 
 Users will have an input to create and log into their account. 
 Their information is saved in the database and confirmation is needed from the db everytime they attempt to login
@@ -44,7 +52,8 @@ The application's database will store each the following:
 I have edited the startup to save information from the task form a user fills out to list a task
 The task form includes an image, text boxes such as a title, description, addresses, date, time, and checkboxes to further describe the task they are listing
 The data will be sent and saved to mongodb
-Next, tasks will be displayed to the user:
+Next, tasks will be displayed to the user when they go back to "Do a Task":
+- the front end uses data from back end to display the Uuser's task
 - to do this, the data will be taken from mongodb and used to create a container that displayes the available tasks on the database
 - The server must be running in order to view this
 
